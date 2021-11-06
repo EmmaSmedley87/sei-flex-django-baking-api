@@ -19,6 +19,10 @@ from cakes import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cakes/', views.index),
-
+    path('cakes/', views.CakeListView),
+    path('api/cakes/', views.CakeListView.as_view()),
+    # path('api/cakes/', views.read),
+    # path('api/cakes/', views.read),
+    # path('api/cakes/{id}', views.update),
+    # path('api/cakes/{id}', views.delete)
 ]
