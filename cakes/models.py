@@ -12,7 +12,7 @@ class Cakes(models.Model):
     recipe_instructions = models.CharField(max_length=300)
     time = models.TimeField(max_length=50)
     cake_Categories = models.ManyToManyField(
-        'CakeCategories', related_name='cakes')
+        'CakeCategories', related_name='Cakes')
     skill_level = models.CharField(max_length=50)
 
 #    const cake = {
