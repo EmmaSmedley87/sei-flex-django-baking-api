@@ -18,8 +18,13 @@ from django.urls import path
 from cakes import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/cakes/', views.CakeListView.as_view()),
+    path("admin/", admin.site.urls),
+    # url link for cakes list view CRUD in views.py
+    path("api/cakes/", views.CakeListView.as_view()),
+    # url link for cakes single view CRUD in views.py
+    path("api/cakes/", views.CakeSingleView.as_view()),
+    path("api/cakes/<int:id>/", views.CakeSingleView.as_view()),
+
 
 
 ]

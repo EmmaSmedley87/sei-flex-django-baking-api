@@ -1,5 +1,4 @@
-from rest_framework import serializers
-from rest_framework.serializers import Serializer
+from rest_framework import response
 from rest_framework.views import APIView
 # to get a response
 from rest_framework.response import Response
@@ -16,7 +15,7 @@ from .serializers import CakeSerializer
 
 class CakeListView(APIView):
  # create a cake
-    def post(self, request):
+    def post(self, request, id):
         # request data from models to create a new cake
         request.data['owner'] = request.user.id
         # convert data to python readable format (json) via the serializer
@@ -39,29 +38,39 @@ class CakeListView(APIView):
 
 class CakeSingleView(APIView):
 
+    def get_cake_by_id(self, id):
+        try:
+            return Cakes.objects.get(id=id)
+        except Cakes.DoesNotExist:
+            raise NotFound(detail="Cake does not exist")
+
     # get individual cake
-    def get(self, _request, pk):
+    def get(self, _request, id):
         # request data from models to get an individual cake
-        cakes = self.get_cake(pk=pk)
+        cake = self.get_cake_by_id(id)
         # convert data to python readable format (json) via the serializer
-        serialized_cakes = CakeSerializer(cakes)
+        serialized_cakes = CakeSerializer(cake)
         # returns cake data and matching status code
-        return Response(serialized_cakes.data, status=status.HTTP_200_OK)
+        return response.Response(serialized_cakes.data, status=status.HTTP_200_OK)
 
     # delete cake
-    def delete(self, _request, pk):
-        cake_to_delete = self.get_cake(pk=pk)
-        cake_to_delete.delete()
+    def delete(self, request, id):
+        cake = self.get_cake_by_id(id)
+        cake.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
    # update cake
-    def put(self, request, pk):
-        cake_to_edit = self.get_cake(pk=pk)
-        updated_cake = CakeSerializer(cake_to_edit, data=request.data)
+    def put(self, request, id):
+        cakes = self.get_cake_by_id(id)
+        updated_cake = CakeSerializer(cakes, data=request.data)
         if updated_cake.is_valid():
             updated_cake.save()
-            return Response(updated_cake.data, status=status.HTTP_202_ACCEPTED)
-        return Response(updated_cake.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+            return response.Response(
+                updated_cake.data, status=status.HTTP_202_ACCEPTED
+            )
+        return response.Response(
+            updated_cake.errors, status=status.HTTP_400_BAD_REQUEST
+        )
 
     # def get(self, _request, pk):
     #     try:
