@@ -1,7 +1,6 @@
 import React from "react";
 
-const ChallengingBakes = () => {
-  const Celebration = () => {
+function ChallengingBakes() {
   return (
     <>
       <section>
@@ -37,6 +36,6 @@ const ChallengingBakes = () => {
       </footer>
     </>
   );
-};
+}
 
 export default ChallengingBakes;
