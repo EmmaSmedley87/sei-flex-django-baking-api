@@ -13,7 +13,7 @@ export const getAllCakes = async () => {
 
 // method to get all countries by id
 
-// method for gettingg all countries by cake caetgory
+// method for getting all cakes for category
 
 // method to add a country
 

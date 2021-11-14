@@ -1,3 +1,5 @@
+import "tailwindcss/tailwind.css";
+import "./index.css";
 import "./styles/style.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";

@@ -35,23 +35,49 @@ export default function Cakes() {
 
   return (
     <>
-      <div>
-        <header className="Anything Goes">
-          <h1 className="anything-goes-title">Simply Baking</h1>
-          <h2>Recipes for when you're...</h2>
-          <p>Up For Baking Anything!</p>
+      <section>
+        <div>
+          <header className="Home">
+            <h1 className="home-title">Simply Baking Homepage</h1>
+          </header>
+        </div>
+
+        <section>
           <div>
-            {cakes.map((cake) => {
-              return (
-                <div key={cake.id} className="">
-                  <div>{cake.name}</div>
-                  <div>{cake.recipe_ingrediants}</div>
-                </div>
-              );
-            })}
+            <h2>Baking Recipes depending on your needs.. nice and simple!</h2>
           </div>
-        </header>
+        </section>
+
+        <section>
+          <div>
+            <p>Recipes for when you're... </p>
+            <p>Up for baking anything!</p>
+          </div>
+        </section>
+
+        <div>
+          {cakes.map((cake) => {
+            return (
+              <div key={cake.id} className="">
+                <div>{cake.name}</div>
+                <div>Make this cake!</div>
+                {/* <div>{cake.recipe_ingrediants}</div> */}
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <div>
+        <p>Need some help getting started?</p>
+        <button>Yes- please help!</button>
       </div>
+
+      <footer>
+        <div>
+          <p>Simply Baking by Emma</p>
+        </div>
+      </footer>
     </>
   );
 }
