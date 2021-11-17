@@ -5,12 +5,8 @@ const Navbar = ({ fixed }) => {
   return (
     <>
       <header className="bg-gray-800 md:sticky top-0 z-10">
-        <div className="container mx-auto items-center text-center">
-          <div className="title-font font-large text-white mb-4 md:mb-0 md:border-blue-700">
-            Simply Baking!
-          </div>
-        </div>
-        <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-blue-700 flex-wrap items-center text-base">
+        <div className="container mx-auto items-center text-center"></div>
+        <nav className="md:mr-auto md:ml-4 md:py-3 md:pl-4 md:border-l md:border-blue-700 flex-wrap items-center text-base">
           <div className="navbar-items">
             <Link to="/" className="mr-5 text-white">
               Home
