@@ -15,9 +15,9 @@ from .serializers import CakeSerializer
 
 class CakeListView(APIView):
  # create a cake
-    def post(self, request, id):
+    def post(self, request):
         # request data from models to create a new cake
-        request.data['owner'] = request.user.id
+        # request.data['owner'] = request.user.id
         # convert data to python readable format (json) via the serializer
         cake_to_add = CakeSerializer(data=request.data)
         if cake_to_add.is_valid():
