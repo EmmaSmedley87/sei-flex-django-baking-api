@@ -1,31 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function Search() {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleSearch = () => {
-    console.log("searchterm", searchTerm);
-  };
-
+const Search = ({ handleSearchChange }) => {
   return (
-    <section className="cakes-search-bar-section">
-      <div className="text-center">
-        <div title="cakes-search-bar"></div>
-        <div className="flex">
-          <input
-            type="text"
-            placeholder="I want to bake.."
-            onChange={(event) => {
-              setSearchTerm(event.target.value);
-            }}
-          />
-          <div title="button">
-            <button className="" onClick={handleSearch}>
-              SEARCH
-            </button>
-          </div>
+    <section title="search-bar-section">
+      <div title="search-bar">
+        <div className="container mx-auto flex px-10 py20 md: flex-row flex-col items-center">
+          <section className="cakes-search-bar-section">
+            <div className="text-center">
+              <input
+                type="text"
+                placeholder="I want to bake.."
+                onChange={handleSearchChange}
+              />
+            </div>
+          </section>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Search;
