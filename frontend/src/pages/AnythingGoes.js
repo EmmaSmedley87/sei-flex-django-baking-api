@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import CakesCard from "../components/CakesCard";
+import Search from "../pages/Search";
 
 export default function Cakes() {
   const [cakes, setCakes] = useState([]);
@@ -47,9 +49,10 @@ export default function Cakes() {
         <nav />
       </section>
 
-      <section className="website-title-area"></section>
+      <section title="search-bar-section"></section>
+      <div title="search-bar"></div>
       <div className="container mx-auto flex px-10 py20 md: flex-row flex-col items-center">
-        <p>Search Bar here</p>
+        <Search />
       </div>
 
       <section className="h-200 w-200 p-4 border-4 mx-auto flex text-center object-center bg-yellow-300 w-full -200 items-center">
@@ -58,7 +61,7 @@ export default function Cakes() {
         </div>
       </section>
 
-      <section className="middle area of home">
+      <section title="middle area of home">
         <section className="box-content h-100 w-400 p-4 border-4">
           <div className="container mx-auto flex px-10 py20 md: flex-row flex-col items-center">
             <h2 className="font-medium font-style: italic text-2xl">
@@ -75,17 +78,26 @@ export default function Cakes() {
         </section>
 
         <section className="h-14000 w-400 p-4 border-4 items-center text-center">
-          <div>
-            {cakes.map((cake) => {
-              return (
-                <div key={cake.id} className="">
-                  <div>{cake.name}</div>
-                  <div>Make this cake!</div>
-                  {/* <div>{cake.recipe_ingrediants}</div> */}
+          {cakes.map((cake) => {
+            return (
+              <section>
+                <div className="cakes-card border-solid border-black px-5 py-6 border-width 10px">
+                  <div className="cakes-card-content">
+                    <h3 className="font-light text-3xl">{cake.name}</h3>
+                  </div>
+                  <div className="recipe-button">
+                    <button
+                      className="object-right bg-red-600 px-10 py-4 border-20 border-gray-200
+                                  text-white hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2
+                                  focus:ring-blue-700 focus:text-blue-700 cursor-pointer"
+                    >
+                      Make This Cake!
+                    </button>
+                  </div>
                 </div>
-              );
-            })}
-          </div>
+              </section>
+            );
+          })}
         </section>
 
         <section className="website bottom section">

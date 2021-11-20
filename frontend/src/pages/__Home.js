@@ -1,5 +1,6 @@
 import React from "react";
 // import LinkButton from "../components/fields/LinkButton";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -39,89 +40,36 @@ const Home = () => {
             </p>
           </div>
         </section>
-        {/* <div className="virtical-align: middle">
-          <button>I'm short on time</button>
-          <button>I'm a newbie</button>
-          <button>I'm with the kids</button>
-          <button>I have allergies</button>
-          <button>It's a celebration!</button>
-          <button>I feel like a challenge!</button>
-          <button>I'm vegan</button>
-          <button>I love chocolate</button>
-          <button>I'm up for baking anything</button>
-        </div> */}
 
         <section className="box-content h-1000 w-400 p-4 border-4 mx-auto flex items-center text-center object-center">
           <div class="font-light text-2xl bg-white rounded-lg border border-gray w-full -200 w-48 text-gray-900 text-sm items-center">
-            <button
-              Link
-              to="/ShortOnTime"
-              // onClick={this.handleClick()}
-              aria-current="true"
-              type="button"
-              class="px-4 py-4 border-b border-gray-200 w-full bg-green-600 text-white hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:text-blue-700 cursor-pointer"
-            >
-              I'm short on time
-            </button>
-            <button
-              type="button"
-              class="px-4 py-4 border-b border-gray-200 w-full bg-pink-500 text-white hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer"
-            >
-              I'm a newbie
-            </button>
-            <button
-              type="button"
-              class="px-4 py-4 border-b border-gray-200 w-full bg-blue-500 text-white hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer"
-            >
-              I'm with the kids
-            </button>
-            <button
-              disabled
-              type="button"
-              class="px-4 py-4 border-b border-gray-200 w-full bg-yellow-300 text-white rounded-b-lg hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer"
-            >
-              I have allergies
-            </button>
-
-            <button
-              disabled
-              type="button"
-              class="px-4 py-4 border-b border-gray-200 w-full bg-green-400 text-white rounded-b-lg hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer"
-            >
-              It's a celebration!
-            </button>
-
-            <button
-              disabled
-              type="button"
-              class="px-4 py-4 border-20 border-gray-200 w-full bg-yellow-600 text-white rounded-b-lg hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer"
-            >
-              I feel like a challenge!
-            </button>
-
-            <button
-              disabled
-              type="button"
-              class="px-4 py-4 border-b border-gray-200 w-full bg-purple-500 text-white rounded-b-lg hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer"
-            >
-              I'm vegan
-            </button>
-
-            <button
-              disabled
-              type="button"
-              class="px-4 py-4 border-b border-gray-200 w-full bg-pink-900 text-white rounded-b-lg hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer"
-            >
-              I love chocolate
-            </button>
-
-            <button
-              disabled
-              type="button"
-              class="px-4 py-4 border-b border-gray-200 w-full bg-red-600 text-white rounded-b-lg hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer"
-            >
-              I'm up for baking anything
-            </button>
+            <div class="px-4 py-4 border-b border-gray-200 w-full bg-red-600 text-white hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer">
+              <Link to="/AnythingGoes">I'm up for baking anything</Link>
+            </div>
+            <div class="px-4 py-4 border-b border-gray-200 w-full bg-green-700 text-white hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer">
+              <Link to="/ShortOnTime">I'm short on time</Link>
+            </div>
+            <div class="px-4 py-4 border-b border-gray-200 w-full bg-pink-500 text-white hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer">
+              <Link to="/Newbie">I'm a newbie</Link>
+            </div>
+            <div class="px-4 py-4 border-b border-gray-200 w-full bg-blue-500 text-white hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer">
+              <Link to="/WithTheKids">I'm with the kids</Link>
+            </div>
+            <div class="px-4 py-4 border-b border-gray-200 w-full bg-yellow-300 text-white hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer">
+              <Link to="/Allergies">I have allergies</Link>
+            </div>
+            <div class="px-4 py-4 border-b border-gray-200 w-full bg-purple-500 text-white hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer">
+              <Link to="/Vegan">I'm vegan</Link>
+            </div>
+            <div class="px-4 py-4 border-b border-gray-200 w-full bg-green-400 text-white hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer">
+              <Link to="/Celebration">It's a celebration!</Link>
+            </div>
+            <div class="px-4 py-4 border-b border-gray-200 w-full bg-yellow-600 text-white hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer">
+              <Link to="/ChallengingBakes">I feel like a challenge!</Link>
+            </div>
+            <div class="px-4 py-4 border-b border-gray-200 w-full bg-pink-900 text-white hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 cursor-pointer">
+              <Link to="/LoveChocolate">I love chocolate</Link>
+            </div>
           </div>
         </section>
       </section>
