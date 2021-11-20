@@ -4,7 +4,7 @@ const Search = ({ handleSearchChange }) => {
   return (
     <section title="search-bar-section">
       <div title="search-bar">
-        <div className="container mx-auto flex px-10 py20 md: flex-row flex-col items-center">
+        <div className="container mx-auto px-10 py26 md: flex-row flex-col items-center">
           <section className="cakes-search-bar-section">
             <div className="text-center">
               <input

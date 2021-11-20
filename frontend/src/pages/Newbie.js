@@ -61,20 +61,15 @@ export default function Cakes() {
         <nav />
       </section>
 
-      <section className="website-title-area"></section>
-      <div className="container mx-auto flex px-10 py20 md: flex-row flex-col items-center">
-        <p>Search Bar here</p>
-      </div>
-
       <section className="h-200 w-200 p-4 border-4 mx-auto flex text-center object-center bg-yellow-300 w-full -200 items-center">
         <div className="container px-10 py20 md: items-center">
           <h1 className="font-bold text-center text-4xl">Simply Baking</h1>
         </div>
       </section>
 
-      <section className="middle area of home">
+      <section className="middle-area-of-newbie">
         <section className="box-content h-100 w-400 p-4 border-4">
-          <div className="container mx-auto flex px-10 py20 md: flex-row flex-col items-center">
+          <div className="container mx-auto px-10 py20 md: flex-row flex-col items-center text-center">
             <h2 className="font-medium font-style: italic text-2xl">
               Baking Recipes depending on your needs.. nice and simple!
             </h2>

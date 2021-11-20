@@ -1,11 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import CakesCard from "../components/CakesCard";
 import Search from "../pages/Search";
-// import { Button } from "bootstrap";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
+import RecipeModal from "../components/RecipeModal";
 
 export default function Cakes() {
   const [cakes, setCakes] = useState([]);
@@ -40,18 +37,17 @@ export default function Cakes() {
     <>
       {cake.map((cakeObj) => {
         return (
-          <Modal key={cakeObj.id} show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>{cakeObj.name}</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <div className="recipe-instructions">
-                {cakeObj.recipe_instructions}
-              </div>
-              <div className="ingredients"></div>
-            </Modal.Body>
-            <Modal.Footer></Modal.Footer>
-          </Modal>
+          <RecipeModal
+            key={cakeObj.id}
+            id={cakeObj.id}
+            name={cakeObj.name}
+            ingredients={cakeObj.recipe_ingrediants}
+            instructions={cakeObj.recipe_instructions}
+            time={cakeObj.time}
+            skillLevel={cakeObj.skill_level}
+            showModal={show}
+            handleCloseModal={handleClose}
+          />
         );
       })}
 
@@ -76,9 +72,9 @@ export default function Cakes() {
           </div>
         </section>
 
-        <section title="middle area of home">
+        <section className="middle-area-of-anythong-goes">
           <section className="box-content h-100 w-400 p-4 border-4">
-            <div className="container mx-auto flex px-10 py20 md: flex-row flex-col items-center">
+            <div className="container mx-auto px-10 py20 md: flex-row flex-col items-center text-center">
               <h2 className="font-medium font-style: italic text-2xl">
                 Baking Recipes depending on your needs.. nice and simple!
               </h2>
