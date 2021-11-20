@@ -9,13 +9,17 @@ import Modal from "react-bootstrap/Modal";
 
 export default function Cakes() {
   const [cakes, setCakes] = useState([]);
+  const [cake, setCake] = useState([]);
   const [filteredCakes, setFilteredCakes] = useState([]);
 
   // Modal Setup
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  // Modal Setup
+  const handleShow = (e) => {
+    const buttonValue = e.target.value;
+    setCake(cakes.filter((cake) => cake.name === buttonValue));
+    setShow(true);
+  };
 
   useEffect(() => {
     async function getAllCakes() {
@@ -34,17 +38,22 @@ export default function Cakes() {
 
   return (
     <>
-      {/* <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button> */}
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-        <Modal.Footer></Modal.Footer>
-      </Modal>
+      {cake.map((cakeObj) => {
+        return (
+          <Modal key={cakeObj.id} show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>{cakeObj.name}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <div className="recipe-instructions">
+                {cakeObj.recipe_instructions}
+              </div>
+              <div className="ingredients"></div>
+            </Modal.Body>
+            <Modal.Footer></Modal.Footer>
+          </Modal>
+        );
+      })}
 
       <section id="anything-goes">
         <section id="left-side-images">

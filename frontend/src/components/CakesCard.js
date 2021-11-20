@@ -13,6 +13,7 @@ const CakesCard = ({ id, name, handleShowModal }) => {
             text-white hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2
             focus:ring-blue-700 focus:text-blue-700 cursor-pointer"
             onClick={handleShowModal}
+            value={name}
           >
             Make This Cake!
           </button>
